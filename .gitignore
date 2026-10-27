@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+recall.db
+recall.db-shm
+recall.db-wal
+.DS_Store

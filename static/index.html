@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="A calm, private flashcard app that helps you remember what you learn.">
+  <title>Recall Garden — Learn a little, remember a lot</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Recall Garden home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>recall<span class="brand-light">garden</span></span>
+      </a>
+      <div class="sidebar-label">YOUR SPACE</div>
+      <nav class="primary-nav">
+        <button class="nav-link active" data-view="home"><span class="nav-icon">⌂</span> Overview</button>
+        <button class="nav-link" data-view="cards"><span class="nav-icon">▤</span> All flashcards</button>
+      </nav>
+      <div class="decks-heading"><span class="sidebar-label">YOUR DECKS</span>
+        <button class="icon-button" id="add-deck" aria-label="Create a deck" title="Create a deck">＋</button>
+      </div>
+      <nav id="deck-list" class="deck-list" aria-label="Flashcard decks"></nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note"><span class="note-spark">✦</span><p>Little by little,<br>the garden grows.</p><span class="note-caption">YOUR DATA STAYS ON THIS DEVICE</span></div>
+      <button class="nav-link export-link" id="export-data"><span class="nav-icon">↥</span> Export / import</button>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">✳</span> recall<span class="brand-light">garden</span></div>
+        <div class="breadcrumb" id="breadcrumb">Your learning space <span>/</span> Overview</div>
+        <div class="topbar-right"><span class="privacy-pill"><span class="privacy-dot"></span> Private &amp; local</span><span class="date-label" id="date-label"></span></div>
+      </header>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <section id="main-content" class="content" aria-live="polite"></section>
+    </main>
+  </div>
+  <div id="modal-root"></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <script src="/local-store.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
